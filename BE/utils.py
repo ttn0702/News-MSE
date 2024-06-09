@@ -4,7 +4,12 @@ from bs4 import BeautifulSoup
 from settings import PROXY
 
 def get_soup(url):
-    req = requests.get(url, proxies=PROXY)
+    if PROXY.get('http') and PROXY.get('https'):
+        _proxy = PROXY
+    else:
+        _proxy = {}
+    print("_proxy: ",_proxy)
+    req = requests.get(url, proxies=_proxy)
     soup = BeautifulSoup(req.content, 'xml')
     return soup
 

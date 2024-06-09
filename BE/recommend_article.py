@@ -38,7 +38,7 @@ class RecommendArticles:
             "published",
             "image_link",
         ]
-        train_csv_file = open(self.file_name, "w")
+        train_csv_file = open(self.file_name, "w", encoding='utf-8')
 
         train_writer = csv.DictWriter(
             train_csv_file, fieldnames=train_headers, delimiter=";"
@@ -74,6 +74,7 @@ class RecommendArticles:
         df["processed_content"] = df["title"].apply(preprocess_text)
         # Tạo ma trận đặc trưng TF-IDF cho nội dung
         tfidf_content = TfidfVectorizer()
+        print('data: ',data)
         tfidf_matrix_content = tfidf_content.fit_transform(df["processed_content"])
 
         # Tạo ma trận đặc trưng TF-IDF cho thể loại

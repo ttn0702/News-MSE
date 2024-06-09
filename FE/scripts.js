@@ -1,6 +1,6 @@
 let currentArticles = [];
 let currentIndex = 0;
-const domainBE = "http://127.0.0.1:1111"
+const domainBE = "http://127.0.0.1:5001"
 const defaultImageUrl = 'https://via.placeholder.com/400x300?text=No+Image+Available';
 
 // Function to fetch categories and populate the navigation bar

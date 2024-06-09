@@ -1,6 +1,6 @@
 PROXY = {
-  "http": "http://10.0.55.74:9090",
-  "https": "http://10.0.55.74:9090"
+  "http": "",
+  "https": ""
 }
 
 RSS_FEEDS = {
