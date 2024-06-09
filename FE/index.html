@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSE News</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="image.png" alt="MSE News Logo" class="logo">
+            <h1>MSE News</h1>
+        </div>
+
+        <div class="nav-container" id="nav-container">
+            <div class="nav" id="nav">
+                <!-- Categories will be loaded here -->
+            </div>
+        </div>
+
+        <div class="content" id="content">
+            <h2>Select a category to view articles</h2>
+        </div>
+
+        <div class="footer">
+            <div class="button-row">
+                <button id="prev-article" onclick="prevArticle()" disabled>Previous Article</button>
+                <button id="next-article" class="full-width-button" onclick="nextArticle()">Next Article</button>
+            </div>
+            <button class="full-width-button" id="read-more" onclick="readMore()">Read More</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
