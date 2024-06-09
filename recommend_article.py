@@ -1,16 +1,12 @@
 from settings import RSS_FEEDS
 from utils import get_article_content
 import csv
-import time
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
-import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import numpy as np
-import time
-import joblib
 
 
 ps = PorterStemmer()
@@ -73,7 +69,7 @@ class RecommendArticles:
         train_csv_file.close()
 
     def train_model(self):
-        data = pd.read_csv("train_data.csv", delimiter=";")
+        data = pd.read_csv(self.file_name, delimiter=";")
         df = pd.DataFrame(data)
         df["processed_content"] = df["title"].apply(preprocess_text)
         # Tạo ma trận đặc trưng TF-IDF cho nội dung

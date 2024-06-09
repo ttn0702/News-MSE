@@ -42,12 +42,10 @@ def get_random_article():
         return jsonify({"error": "Invalid request"}), 400
     recommended_articles = Repo.recommend(links, 20)
     if current_link:
-        print("current_link: ", current_link)
         recommended_articles = recommended_articles.loc[
             recommended_articles["link"] != current_link
         ]
     len_recommend = len(recommended_articles.index)
-    print("len_recommend: ", len_recommend)
     if len_recommend == 0:
         return jsonify({"data": {}})
     # random 1 recommended article
